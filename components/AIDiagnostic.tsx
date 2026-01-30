@@ -1,16 +1,9 @@
-
 import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import { Cpu, Info, Send, Loader2 } from 'lucide-react';
+import ErrorBoundary from './ErrorBoundary';
 
-// Declaration to satisfy TypeScript compiler when using process.env.API_KEY replaced by Vite
-declare const process: {
-  env: {
-    API_KEY: string;
-  }
-};
-
-const AIDiagnostic: React.FC = () => {
+const AIDiagnosticContent: React.FC = () => {
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{ cause: string, severity: string, advice: string } | null>(null);
@@ -23,9 +16,16 @@ const AIDiagnostic: React.FC = () => {
     setResult(null);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // Acessando a chave de API através das variáveis de ambiente do Vite
+      const apiKey = import.meta.env.VITE_API_KEY;
+      
+      if (!apiKey) {
+        throw new Error("Chave de API não configurada.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey: apiKey });
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.5-flash",
         contents: `Analise os seguintes sintomas de um veículo e sugira causas prováveis, nível de urgência e conselhos iniciais. Retorne APENAS um JSON estruturado. Sintomas: ${query}`,
         config: {
           responseMimeType: "application/json",
@@ -50,7 +50,7 @@ const AIDiagnostic: React.FC = () => {
       setResult({
         cause: "Não foi possível processar o diagnóstico automaticamente.",
         severity: "N/A",
-        advice: "Por favor, entre em contato via WhatsApp para uma avaliação humana."
+        advice: "Verifique sua conexão ou entre em contato via WhatsApp para uma avaliação humana."
       });
     } finally {
       setLoading(false);
@@ -120,6 +120,14 @@ const AIDiagnostic: React.FC = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const AIDiagnostic: React.FC = () => {
+  return (
+    <ErrorBoundary>
+      <AIDiagnosticContent />
+    </ErrorBoundary>
   );
 };
 
