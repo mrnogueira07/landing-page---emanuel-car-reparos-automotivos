@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emanuel Car - Reparos Automotivos</title>
+    <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/736x/c7/f8/0a/c7f80a6a8215cebc0ea93ea6671c1daf.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Initial state for elements using animations */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Animations */
+        @keyframes fade-in-zoom {
+            0% { opacity: 0; transform: scale(1.2); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        @keyframes slide-up-reveal {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slide-left-reveal {
+            0% { opacity: 0; transform: translateX(-40px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scale-pop {
+            0% { opacity: 0; transform: scale(0.8); }
+            70% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+
+        @keyframes nav-drop {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-bg-hero {
+            animation: fade-in-zoom 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-reveal-text {
+            animation: slide-up-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-reveal-badge {
+            animation: slide-left-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-reveal-btn {
+            animation: scale-pop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-pulse-red {
+            animation: pulse-red 2s infinite;
+        }
+
+        .animate-nav-item {
+            animation: nav-drop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+<body class="bg-black text-white">
+    <div id="root"></div>
+</body>
+</html>

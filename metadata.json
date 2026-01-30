@@ -1,0 +1,7 @@
+{
+  "name": "Emanuel Car Reparos Automotivos",
+  "description": "Uma landing page moderna e realista para oficina mecânica multimarcas com especialização em Hyundai, utilizando as cores preto, vermelho e branco.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
