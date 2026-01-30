@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import { Award, User, Layers } from 'lucide-react';
 
@@ -134,17 +135,6 @@ const About: React.FC = () => {
                 <p className="text-zinc-500 text-sm leading-snug">Aplicamos o mesmo rigor técnico e precisão de concessionária para veículos de todas as montadoras.</p>
               </div>
             </div>
-          </div>
-          
-          <div className="mt-10 flex flex-wrap gap-4 items-center">
-            <div className="flex -space-x-3">
-               <img className="w-10 h-10 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="Cliente" />
-               <img className="w-10 h-10 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100" alt="Cliente" />
-               <img className="w-10 h-10 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Cliente" />
-            </div>
-            <p className="text-xs text-zinc-500 uppercase tracking-wider font-bold">
-              Junte-se a centenas de clientes satisfeitos
-            </p>
           </div>
         </div>
       </div>
