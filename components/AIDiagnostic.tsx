@@ -34,8 +34,10 @@ const AIDiagnostic: React.FC = () => {
         }
       });
 
-      const data = JSON.parse(response.text);
-      setResult(data);
+      if (response.text) {
+        const data = JSON.parse(response.text);
+        setResult(data);
+      }
     } catch (error) {
       console.error("AI Error:", error);
       setResult({
