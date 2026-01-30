@@ -3,6 +3,13 @@ import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import { Cpu, Info, Send, Loader2 } from 'lucide-react';
 
+// Declaration to satisfy TypeScript compiler when using process.env.API_KEY replaced by Vite
+declare const process: {
+  env: {
+    API_KEY: string;
+  }
+};
+
 const AIDiagnostic: React.FC = () => {
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
