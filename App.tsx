@@ -22,7 +22,6 @@ import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import AIDiagnostic from './components/AIDiagnostic';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +77,6 @@ const App: React.FC = () => {
 
         <HyundaiSpecialty />
         <Services />
-        <AIDiagnostic />
         <Testimonials />
         <Contact />
       </main>

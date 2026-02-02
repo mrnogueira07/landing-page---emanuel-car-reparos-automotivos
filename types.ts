@@ -1,4 +1,3 @@
-
 export interface ServiceItem {
   id: string;
   title: string;
@@ -12,10 +11,4 @@ export interface Review {
   rating: number;
   comment: string;
   date: string;
-}
-
-export interface DiagnosisResult {
-  possibleCause: string;
-  severity: 'low' | 'medium' | 'high';
-  advice: string;
 }

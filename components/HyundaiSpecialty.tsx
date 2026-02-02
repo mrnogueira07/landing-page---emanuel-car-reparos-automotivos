@@ -1,16 +1,15 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Award, User, Layers } from 'lucide-react';
 
-const About: React.FC = () => {
+const HyundaiSpecialty: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Sequence of images to simulate a story/process as user scrolls
   const images = [
     "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=1000", // Wide view of shop
-    "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1000", // Mechanic inspecting engine (Image 2 - Fixed)
-    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1000"  // Engine bay detail (Last Image - Updated)
+    "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&q=80&w=1000", // Mechanic inspecting engine
+    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1000"  // Engine bay detail
   ];
 
   useEffect(() => {
@@ -21,15 +20,12 @@ const About: React.FC = () => {
       const windowHeight = window.innerHeight;
       
       // Calculate scroll progress relative to the section's visibility
-      // We want the animation to happen while the section passes through the viewport
       const scrollDistance = windowHeight + height;
       const position = windowHeight - top;
       
       // Normalize position to 0-1
       const progress = position / scrollDistance;
       
-      // Determine image index (3 images)
-      // We map the useful range (e.g., 0.2 to 0.8) to the indices to avoid instant switching at edges
       const clampedProgress = Math.max(0, Math.min(1, progress));
       const index = Math.min(Math.floor(clampedProgress * images.length), images.length - 1);
       
@@ -142,4 +138,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default HyundaiSpecialty;
