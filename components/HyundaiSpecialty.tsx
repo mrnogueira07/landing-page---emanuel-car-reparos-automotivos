@@ -101,7 +101,7 @@ const HyundaiSpecialty: React.FC = () => {
           
           <div className="space-y-6 text-zinc-400 text-base md:text-lg leading-relaxed">
             <p>
-              A <strong>Emanuel Car</strong> nasceu de um fascínio de infância: entender exatamente como as coisas funcionam. O que começou como curiosidade transformou-se em mais de 15 anos de dedicação total à engenharia automotiva.
+              A <strong>Emanuel Car</strong> nasceu de uma pergunta simples que nunca saiu da cabeça: como isso funciona? Uma curiosidade de infância que, com o tempo, se transformou em mais de 15 anos de dedicação intensa à engenharia automotiva.
             </p>
             <p>
               Não tratamos carros apenas como máquinas, mas como parte fundamental da vida de nossos clientes. Entendemos que cada veículo carrega histórias, compromissos e famílias.

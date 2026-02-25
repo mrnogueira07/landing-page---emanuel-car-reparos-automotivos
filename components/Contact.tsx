@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
                 {/* Google Maps Embed Container */}
                 <div className="w-full mt-2 group relative">
                   <div className="absolute -inset-1 bg-red-600 rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
-                  <div className="relative bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden h-64 w-full shadow-2xl">
+                  <div className="relative bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden h-[550px] w-full shadow-2xl">
                     <iframe 
                       title="Localização Emanuel Car Reparos Automotivos"
                       src={fallbackMapUrl}

@@ -1,20 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Wrench, 
-  Settings, 
-  ShieldCheck, 
-  Clock, 
-  Phone, 
-  MapPin, 
-  Instagram, 
-  Facebook, 
-  MessageCircle,
-  ChevronRight,
-  Menu,
-  X,
-  Cpu,
-  Star
-} from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import HyundaiSpecialty from './components/HyundaiSpecialty';

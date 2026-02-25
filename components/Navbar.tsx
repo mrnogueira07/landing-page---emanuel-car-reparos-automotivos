@@ -62,10 +62,10 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-[60] transition-all duration-500 ease-in-out ${
+    <nav className={`fixed left-1/2 -translate-x-1/2 z-[60] transition-all duration-500 ease-in-out ${
       scrolled 
-        ? 'bg-black/95 backdrop-blur-xl border-b border-zinc-900 py-2 shadow-2xl shadow-black/50' 
-        : 'bg-transparent py-4 md:py-8'
+        ? 'top-4 w-[95%] max-w-[1400px] bg-black/80 backdrop-blur-xl border border-zinc-800 py-2 rounded-2xl shadow-2xl shadow-black/50' 
+        : 'top-0 w-full bg-transparent py-4 md:py-8'
     }`}>
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -136,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ isMenuOpen, setIsMenuOpen }) => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`lg:hidden absolute top-[80px] md:top-[100px] left-0 w-full bg-black/98 backdrop-blur-3xl transition-all duration-500 ease-in-out border-b border-zinc-900 overflow-hidden ${
+      <div className={`lg:hidden absolute top-[80px] md:top-[100px] left-0 w-full bg-black/98 backdrop-blur-3xl transition-all duration-500 ease-in-out border-b border-zinc-900 overflow-hidden rounded-b-2xl ${
         isMenuOpen ? 'max-h-[85vh] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
       }`}>
         <div className="px-6 py-8 space-y-1 flex flex-col items-center text-center">
